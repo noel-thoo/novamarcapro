@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Nova Marca Pro • Marca Profissional em até 48h por R$120</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="description" content="Criação de marca profissional em até 48h. Pacote completo (PNG, JPG, PNG sem fundo, CorelDRAW, PDF, SVG). Organização de arquivos impecável. Reembolso parcial (50%) se ultrapassar 7 dias.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   Nova Marca Pro v7.3 — Supreme Emotion Ultra Complete
+   - Tema aleatório opcional (A–F) + tema fixo
+   - Transição suave (fade) ao aplicar tema
+   - Hero 2 colunas (texto + vídeo)
+   - Popup PRO (glass + neon, labels flutuantes, validação)
+   - Responsividade mobile 100% (sem scroll lateral)
+   - Efeitos: reveals (IO), hovers 3D, micro-parallax seguro
+   =========================================================== */
+
+:root{
+  --maxw:1280px;
+  --font:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --r-lg:18px; --r-md:14px; --r-sm:10px;
+  --bx:24px; --bx-lg:32px; --bx-sm:16px;
+  --sh-1:0 16px 40px rgba(0,0,0,.28);
+  --sh-2:0 26px 56px rgba(0,0,0,.42);
+  --sh-soft:0 20px 45px rgba(0,0,0,.22);
+  scroll-behavior:smooth;
+}
+
+/* ===== Global Resets & Mobile Safety ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow-x:hidden;max-width:100vw}
+body{
+  font-family:var(--font);
+  background:var(--bg); color:var(--tx);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  overscroll-behavior:none;
+  opacity:0; transition:opacity .4s ease; /* fade-in suave de tema */
+}
+body.ready{opacity:1}
+.page{max-width:var(--maxw);margin:0 auto;padding:32px var(--bx) calc(56px + env(safe-area-inset-bottom,0))}
+
+/* ===== Header ===== */
+header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:24px}
+@media(max-width:860px){header{flex-direction:column;align-items:flex-start;gap:12px}}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:52px;height:52px;border-radius:16px;background:var(--logo-grad);box-shadow:0 0 18px var(--glow);position:relative;overflow:hidden;flex:0 0 52px}
+.logo::after{content:"";position:absolute;inset:7px;border-radius:12px;border:1px solid var(--logo-brim);backdrop-filter:blur(2px)}
+.b-title{font-size:1.12rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.b-sub{font-size:.9rem;color:var(--tx-muted)}
+.pill{display:inline-flex;gap:8px;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid var(--bd-1);background:var(--chip-bg);color:var(--tx-muted);font-size:.88rem;white-space:nowrap}
+.pill-dot{width:8px;height:8px;border-radius:999px;background:var(--ok);box-shadow:0 0 12px var(--ok)}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;overflow:hidden;border-radius:var(--r-lg);
+  border:1px solid var(--bd-1);background:var(--panel);
+  box-shadow:var(--sh-2);padding:28px var(--bx-lg);margin-bottom:32px
+}
+.hero::before{
+  content:"";position:absolute;inset:-30%;
+  background:radial-gradient(circle at top left,var(--halo-1),transparent 56%),radial-gradient(circle at bottom right,var(--halo-2),transparent 55%);
+  pointer-events:none
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:18px}}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;text-transform:uppercase;padding:6px 12px;border-radius:999px;font-size:.76rem;letter-spacing:.14em;background:var(--eyebrow-bg);border:1px solid var(--eyebrow-bd);color:var(--eyebrow-tx);margin-bottom:10px}
+h1{font-size:clamp(2.1rem,2.5vw + 1rem,3.2rem);line-height:1.12;margin-bottom:10px}
+.h1-h{color:var(--accent)}
+.sub{font-size:1.02rem;color:var(--tx-soft);max-width:860px;margin-bottom:12px}
+.seal{display:flex;gap:10px;align-items:center;flex-wrap:wrap;border:1px solid var(--seal-bd);background:var(--seal-bg);color:var(--seal-tx);padding:10px 14px;border-radius:14px;font-size:.98rem;margin:14px 0 16px}
+.price{display:inline-flex;gap:11px;align-items:baseline;border:1px solid var(--price-bd);background:var(--price-bg);padding:10px 16px;border-radius:999px;margin-bottom:14px;flex-wrap:wrap}
+.price b{color:var(--accent);font-size:1.5rem}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{cursor:pointer;border:0;padding:14px 18px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em;font-weight:800;font-size:1.02rem;background:var(--btn-prim-bg);color:var(--btn-prim-tx);box-shadow:var(--btn-prim-sh);display:inline-flex;align-items:center;gap:12px;transition:transform .14s ease,filter .14s ease,box-shadow .14s ease}
+.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.03);box-shadow:var(--btn-prim-sh-h)}
+.btn-ghost{border:1px solid var(--bd-1);background:var(--chip-bg);color:var(--tx-muted);padding:12px 16px;border-radius:999px;font-size:.95rem;transition:filter .14s ease}
+.btn-ghost:hover{filter:brightness(1.05)}
+
+/* ===== Vídeo no hero ===== */
+.video-inline{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--bd-2);box-shadow:var(--sh-soft);background:radial-gradient(circle at 50% 0,var(--halo-1),transparent 45%)}
+.video-inline::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+.video-inline iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;max-width:100%}
+@media(max-width:768px){
+  .video-inline{width:100%;margin-top:12px}
+  .hero-grid{display:flex;flex-direction:column}
+}
+
+/* ===== Diferenciais ===== */
+.copy{margin-top:18px;background:var(--hero-bg);border:1px solid var(--bd-1);border-radius:var(--r-md);padding:18px}
+.copy h3{font-size:1.18rem;margin-bottom:8px}
+.copy p{color:var(--tx-soft);font-size:1rem;margin-bottom:9px}
+.list{display:grid;gap:14px;margin-top:16px}
+@media(min-width:760px){.list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.li{display:flex;gap:12px;align-items:flex-start;color:var(--tx-soft);font-size:1rem}
+.ic{flex:0 0 22px;width:22px;height:22px;border-radius:999px;border:1px solid var(--ic-bd);background:var(--ic-bg);color:var(--ic-tx);display:flex;align-items:center;justify-content:center;font-size:.88rem}
+
+/* ===== “Pasta de entrega” ===== */
+.delivery{display:grid;gap:18px;margin-top:28px;grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:920px){.delivery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.delivery{grid-template-columns:minmax(0,1fr)}}
+.file-card{background:var(--panel-file);border:1px solid var(--bd-1);border-radius:14px;padding:16px;display:flex;gap:14px;align-items:center;box-shadow:var(--sh-1);transform:translateZ(0);transition:transform .14s ease, box-shadow .14s ease;max-width:100%;overflow:hidden}
+.file-card:hover{transform:translateY(-4px);box-shadow:0 26px 60px rgba(0,0,0,.2)}
+.file-ic{width:48px;height:48px;border-radius:14px;background:var(--file-grad);border:1px solid var(--bd-2);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--file-ic-tx);font-size:1.08rem}
+.file-meta{display:flex;flex-direction:column;gap:6px}
+.file-name{font-weight:700}
+.file-desc{color:var(--tx-soft);font-size:.92rem}
+
+/* ===== Footer ===== */
+footer{margin-top:36px;border-top:1px solid var(--bd-1);padding-top:20px;display:grid;gap:12px;font-size:.9rem;color:var(--tx-soft);grid-template-columns:1fr 2fr auto}
+@media(max-width:760px){footer{grid-template-columns:1fr}}
+.refund{max-width:760px}
+.refund b{color:var(--tx)}
+.footer-link{color:var(--tx-muted);text-decoration:none;position:relative}
+.footer-link::after{content:"";position:absolute;left:0;bottom:-1px;width:0;height:1px;background:var(--accent-grad);transition:width .16s ease}
+.footer-link:hover::after{width:100%}
+
+/* ===== Popup (Modal PRO) ===== */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:var(--overlay);backdrop-filter:blur(6px) saturate(120%);z-index:999;padding:18px}
+.modal.show{display:flex}
+.m-panel{
+  width:100%;max-width:760px;background:var(--modal);border:1px solid var(--bd-1);
+  border-radius:18px;box-shadow:var(--sh-2);overflow:hidden;transform:translateY(12px) scale(.98);
+  opacity:.98;animation:pop .18s ease-out forwards
+}
+@keyframes pop{to{transform:translateY(0) scale(1);opacity:1}}
+.m-head{
+  display:flex;justify-content:space-between;align-items:center;padding:14px 18px;
+  border-bottom:1px solid var(--bd-1);background:linear-gradient(180deg,rgba(255,255,255,.04),transparent)
+}
+.m-title{font-weight:800;font-size:1.1rem;display:flex;gap:8px;align-items:center}
+.m-title::before{content:"✦";color:var(--accent)}
+.m-close{cursor:pointer;border:1px solid var(--bd-1);background:var(--chip-bg);color:var(--tx-muted);border-radius:10px;padding:9px 14px;font-size:.95rem}
+.m-body{padding:18px}
+.m-grid{display:grid;gap:14px}
+@media(min-width:720px){.m-grid{grid-template-columns:1fr 1fr;gap:18px}}
+
+.form-group{position:relative}
+.label-float{position:absolute;left:12px;top:11px;font-size:.96rem;color:var(--tx-placeholder);pointer-events:none;transition:all .12s ease}
+.input,.textarea,select{
+  width:100%;border:1px solid var(--bd-2);border-radius:12px;background:var(--input-bg);color:var(--tx);
+  padding:20px 14px 10px;font-size:1rem;outline:none;transition:border-color .13s ease, box-shadow .13s ease, background .13s ease
+}
+.input:focus,.textarea:focus,select:focus{background:var(--input-focus);border-color:var(--focus-bd);box-shadow:0 0 0 1px var(--focus-ring)}
+.input:not(:placeholder-shown) ~ .label-float,
+.input:focus ~ .label-float,
+.textarea:not(:placeholder-shown) ~ .label-float,
+.textarea:focus ~ .label-float{top:6px;font-size:.78rem;color:var(--accent)}
+.textarea{min-height:110px;resize:vertical;max-height:280px}
+.row{display:grid;gap:14px}
+@media(min-width:660px){.row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.check{display:flex;gap:10px;align-items:flex-start;margin:12px 0}
+.check input[type="checkbox"]{margin-top:4px;accent-color:var(--accent)}
+.status{display:none;margin-top:10px;font-size:.95rem;border-radius:10px;padding:10px 12px}
+.status.ok{display:block;background:var(--ok-bg);border:1px solid var(--ok-bd);color:var(--ok-tx)}
+.status.err{display:block;background:var(--err-bg);border:1px solid var(--err-bd);color:var(--err-tx)}
+.code-warn{
+  display:none;margin-top:14px;border:1px dashed var(--code-bd);background:var(--code-bg);color:var(--code-tx);
+  border-radius:12px;padding:12px 14px;font-size:1rem;position:relative;overflow:hidden
+}
+.code-warn::after{content:"";position:absolute;inset:0;border-radius:12px;box-shadow:0 0 60px 10px var(--accent-soft) inset;pointer-events:none;opacity:.35}
+#m_codeText{user-select:text;font-family:ui-monospace,Consolas,monospace;color:var(--accent)}
+.m-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.btn-send{flex:1 1 auto;border:0;border-radius:999px;padding:14px 18px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:1rem;background:var(--btn-sec-bg);color:var(--btn-sec-tx);box-shadow:var(--btn-sec-sh);transition:transform .1s ease,filter .1s ease}
+.btn-send:hover{transform:translateY(-1px);filter:brightness(1.04)}
+.btn-cancel{border:1px solid var(--bd-1);background:var(--chip-bg);color:var(--tx-muted);border-radius:999px;padding:12px 18px;font-size:.96rem}
+.note{font-size:.88rem;color:var(--tx-soft);text-align:center;margin-top:10px}
+
+/* ===== Reveals (IntersectionObserver) ===== */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease, transform .5s ease;will-change:transform,opacity}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+/* ===== THEMES A–F (completos) ===== */
+/* A — Dark Gold Supreme */
+body.theme-A{
+  --bg: radial-gradient(60vw 60vh at 12% -10%, #151b26 0 40%, transparent 41%) #050609;
+  --panel: linear-gradient(140deg, rgba(255,255,255,.04), rgba(3,6,12,.98));
+  --modal:#0b1118; --panel-file:#091019; --chip-bg:#0a0d14;
+  --tx:#f6f7fb; --tx-soft:#c8d0dc; --tx-muted:#a8b2c2;
+  --logo-grad: radial-gradient(circle at 25% 20%, #fff, #f4c063 35%, #0f6b88 75%, #050609);
+  --glow: rgba(244,192,99,.58); --logo-brim: rgba(255,255,255,.5);
+  --bd-1: #ffffff19; --bd-2:#ffffff2b;
+  --eyebrow-bg:#f4c0631a; --eyebrow-bd:#f4c063a6; --eyebrow-tx:#ffe8b7;
+  --halo-1:#f4c0631a; --halo-2:#0f6b881f;
+  --accent:#f4c063; --accent-grad:linear-gradient(90deg,#f4c063,#f7d796);
+  --price-bg:#0b0d12; --price-bd:#f4c063cc;
+  --ic-bd:#0f6b888c; --ic-bg:#0f6b8826; --ic-tx:#9fe7ff;
+  --btn-prim-bg: linear-gradient(135deg,#f4c063,#f7d796); --btn-prim-tx:#2b2616;
+  --btn-prim-sh: 0 16px 34px #f4c06359; --btn-prim-sh-h: 0 20px 40px #f4c06380;
+  --btn-sec-bg: linear-gradient(135deg,#0f6b88,#18a4c8); --btn-sec-tx:#e7f7fb; --btn-sec-sh: 0 14px 30px rgba(15,107,136,.45);
+  --focus-bd:#18a4c8; --focus-ring:#18a4c880; --input-bg:#0a0e15; --input-focus:#0b0f18; --tx-placeholder:#b4bdc9c6;
+  --ok:#0ad27b; --ok-bg:#0ad27b14; --ok-bd:#0ad27b8c; --ok-tx:#c8ffe6;
+  --err-bg:#ff4d7a19; --err-bd:#ff4d7ab3; --err-tx:#ffd3df;
+  --overlay:#0000008a;
+  --seal-bg:#f4c06314; --seal-bd:#f4c063a6; --seal-tx:#ffe9bf;
+  --code-bd:#f4c063cc; --code-bg:#f4c06326; --code-tx:#fff3cf; --accent-soft:#f4c06355;
+  --file-grad: linear-gradient(135deg,#0f6b88 0,#122231 100%); --file-ic-tx:#dff7ff;
+}
+/* B — Lite Minimal Gold */
+body.theme-B{
+  --bg:#f6f8fb; --panel:linear-gradient(180deg,#ffffff,#f6f8fb);
+  --modal:#ffffff; --panel-file:#ffffff; --chip-bg:#f8fafd;
+  --tx:#0f1722; --tx-soft:#2e3a49; --tx-muted:#5a697d;
+  --logo-grad: radial-gradient(circle at 25% 20%, #fff, #f0d098 35%, #0c5a70 75%, #224);
+  --glow:#f4c06359; --logo-brim:#00000012;
+  --bd-1:#0b111418; --bd-2:#0b111423;
+  --eyebrow-bg:#f4c06323; --eyebrow-bd:#d1a6508f; --eyebrow-tx:#6b5525;
+  --halo-1:#f4c0631a; --halo-2:#0f6b8814;
+  --accent:#c89a3d; --accent-grad:linear-gradient(90deg,#d1a650,#f2d39a);
+  --price-bg:#fff8eb; --price-bd:#c89a3dcc;
+  --ic-bd:#0f6b8840; --ic-bg:#0f6b8817; --ic-tx:#155d73;
+  --btn-prim-bg: linear-gradient(135deg,#d1a650,#f2d39a); --btn-prim-tx:#2b2616;
+  --btn-prim-sh:0 12px 24px rgba(209,166,80,.24); --btn-prim-sh-h:0 18px 34px rgba(209,166,80,.36);
+  --btn-sec-bg: linear-gradient(135deg,#0c5a70,#1691b0); --btn-sec-tx:#ffffff; --btn-sec-sh:0 12px 24px rgba(12,90,112,.24);
+  --focus-bd:#1691b0; --focus-ring:#1691b066; --input-bg:#ffffff; --input-focus:#ffffff; --tx-placeholder:#3c4c60a3;
+  --ok:#12a36e; --ok-bg:#12a36e16; --ok-bd:#12a36e66; --ok-tx:#126b4a;
+  --err-bg:#dc325616; --err-bd:#dc32566b; --err-tx:#7e2639;
+  --overlay:#00000048;
+  --seal-bg:#d1a6501f; --seal-bd:#d1a6508f; --seal-tx:#6b5525;
+  --code-bd:#d1a650b8; --code-bg:#d1a65026; --code-tx:#5b4420; --accent-soft:#d1a65044;
+  --file-grad: linear-gradient(135deg,#ffffff,#f1f4f9); --file-ic-tx:#0f1722;
+}
+/* C — Lite Blue Energy */
+body.theme-C{
+  --bg:#f4f7fb; --panel:linear-gradient(180deg,#ffffff,#f4f7fb);
+  --modal:#ffffff; --panel-file:#ffffff; --chip-bg:#f7faff;
+  --tx:#0d1720; --tx-soft:#263649; --tx-muted:#5a6b83;
+  --logo-grad: radial-gradient(circle at 25% 20%, #fff, #cce6ff 35%, #1f6eea 75%, #10223a);
+  --glow:#56a0ff59; --logo-brim:#00000012;
+  --bd-1:#09111c19; --bd-2:#09111c28;
+  --eyebrow-bg:#1f6eea1e; --eyebrow-bd:#1f6eea8f; --eyebrow-tx:#1f3b74;
+  --halo-1:#1f6eea1a; --halo-2:#087ac21a;
+  --accent:#1f6eea; --accent-grad:linear-gradient(90deg,#1f6eea,#59a0ff);
+  --price-bg:#eaf2ff; --price-bd:#1f6eeacc;
+  --ic-bd:#1f6eea57; --ic-bg:#1f6eea19; --ic-tx:#1f6eea;
+  --btn-prim-bg:linear-gradient(135deg,#1f6eea,#59a0ff); --btn-prim-tx:#ffffff;
+  --btn-prim-sh:0 12px 24px #1f6eea44; --btn-prim-sh-h:0 18px 34px #1f6eea66;
+  --btn-sec-bg:linear-gradient(135deg,#0c5a70,#1691b0); --btn-sec-tx:#ffffff; --btn-sec-sh:0 12px 24px rgba(12,90,112,.24);
+  --focus-bd:#1f6eea; --focus-ring:#1f6eea66; --input-bg:#ffffff; --input-focus:#ffffff; --tx-placeholder:#3c4c60a3;
+  --ok:#108a62; --ok-bg:#108a6216; --ok-bd:#108a6270; --ok-tx:#0c5a44;
+  --err-bg:#dc325616; --err-bd:#dc32566b; --err-tx:#7e2639;
+  --overlay:#08122452;
+  --seal-bg:#1f6eea16; --seal-bd:#1f6eea8c; --seal-tx:#1f3b74;
+  --code-bd:#1f6eea9f; --code-bg:#1f6eea24; --code-tx:#163a7a; --accent-soft:#1f6eea3d;
+  --file-grad:linear-gradient(135deg,#eaf2ff,#ffffff); --file-ic-tx:#0d1720;
+}
+/* D — Ruby Dark Emotion */
+body.theme-D{
+  --bg: radial-gradient(60vw 60vh at 12% -10%, #2b0e19 0 40%, transparent 41%) #0b0610;
+  --panel: linear-gradient(140deg, rgba(255,255,255,.04), rgba(14,6,18,.96));
+  --modal:#120914; --panel-file:#150b18; --chip-bg:#170b1b;
+  --tx:#f9f1f5; --tx-soft:#e2c9d5; --tx-muted:#d2b7c4;
+  --logo-grad: radial-gradient(circle at 25% 20%, #fff, #ffb3c6 35%, #9c1e55 75%, #2b0e19);
+  --glow:#ff70a066; --logo-brim:#ffffff72;
+  --bd-1:#ffffff1a; --bd-2:#ffffff2e;
+  --eyebrow-bg:#ff70a019; --eyebrow-bd:#ff70a099; --eyebrow-tx:#ffd9e7;
+  --halo-1:#ff70a01a; --halo-2:#9c1e551f;
+  --accent:#ff70a0; --accent-grad:linear-gradient(90deg,#ff70a0,#ffc0d6);
+  --price-bg:#170b1b; --price-bd:#ff70a0c0;
+  --ic-bd:#ff70a08c; --ic-bg:#ff70a026; --ic-tx:#ffb3d0;
+  --btn-prim-bg:linear-gradient(135deg,#ff70a0,#ffc0d6); --btn-prim-tx:#26131a;
+  --btn-prim-sh:0 16px 34px #ff70a04b; --btn-prim-sh-h:0 20px 40px #ff70a068;
+  --btn-sec-bg:linear-gradient(135deg,#7f1441,#c83a76); --btn-sec-tx:#ffe9f2; --btn-sec-sh:0 14px 30px rgba(200,58,118,.4);
+  --focus-bd:#c83a76; --focus-ring:#c83a7673; --input-bg:#150b1a; --input-focus:#1a0f22; --tx-placeholder:#f0d2d0c7;
+  --ok:#18d08b; --ok-bg:#18d08b1a; --ok-bd:#18d08b93; --ok-tx:#c8ffe6;
+  --err-bg:#ff6e961a; --err-bd:#ff6e96b3; --err-tx:#ffd3e1;
+  --overlay:#08000c8a;
+  --seal-bg:#ff70a019; --seal-bd:#ff70a099; --seal-tx:#ffd9e7;
+  --code-bd:#ff70a0cc; --code-bg:#ff70a029; --code-tx:#ffe3ee; --accent-soft:#ff70a04d;
+  --file-grad: linear-gradient(135deg,#9c1e55 0,#311224 100%); --file-ic-tx:#ffe3ee;
+}
+/* E — Emerald Night Trust */
+body.theme-E{
+  --bg: radial-gradient(60vw 60vh at 12% -10%, #0f1f1a 0 40%, transparent 41%) #050a08;
+  --panel: linear-gradient(140deg, rgba(255,255,255,.04), rgba(6,12,10,.98));
+  --modal:#0a1712; --panel-file:#09140f; --chip-bg:#0a1310;
+  --tx:#f5fbf8; --tx-soft:#cfe4dc; --tx-muted:#b4ccc3;
+  --logo-grad: radial-gradient(circle at 25% 20%, #fff, #a7f3d0 35%, #127a5a 75%, #050a08);
+  --glow:#2bd39466; --logo-brim:#ffffff7a;
+  --bd-1:#ffffff1a; --bd-2:#ffffff2e;
+  --eyebrow-bg:#2bd3941a; --eyebrow-bd:#2bd39499; --eyebrow-tx:#d9fff0;
+  --halo-1:#2bd39429; --halo-2:#127a5a20;
+  --accent:#2bd394; --accent-grad:linear-gradient(90deg,#2bd394,#a7f3d0);
+  --price-bg:#0b1310; --price-bd:#2bd394bf;
+  --ic-bd:#2bd3948f; --ic-bg:#2bd39426; --ic-tx:#b8ffe4;
+  --btn-prim-bg:linear-gradient(135deg,#2bd394,#a7f3d0); --btn-prim-tx:#0b1411;
+  --btn-prim-sh:0 16px 34px #2bd39466; --btn-prim-sh-h:0 20px 40px #2bd39488;
+  --btn-sec-bg:linear-gradient(135deg,#0d6b50,#1aa179); --btn-sec-tx:#e9fff7; --btn-sec-sh:0 14px 30px rgba(26,161,121,.4);
+  --focus-bd:#1aa179; --focus-ring:#1aa17980; --input-bg:#0a1511; --input-focus:#0c1814; --tx-placeholder:#d2f0e9c4;
+  --ok:#23d08f; --ok-bg:#23d08f19; --ok-bd:#23d08f94; --ok-tx:#cbffe9;
+  --err-bg:#ff4d7a19; --err-bd:#ff4d7ab3; --err-tx:#ffd3df;
+  --overlay:#000c088a;
+  --seal-bg:#2bd3941a; --seal-bd:#2bd39499; --seal-tx:#d9ffef;
+  --code-bd:#2bd394cc; --code-bg:#2bd39426; --code-tx:#e7fff6; --accent-soft:#2bd39444;
+  --file-grad:linear-gradient(135deg,#127a5a 0,#0b1511 100%); --file-ic-tx:#dffdf3;
+}
+/* F — Royal Noir Future */
+body.theme-F{
+  --bg: radial-gradient(60vw 60vh at 12% -10%, #0e1422 0 40%, transparent 41%) #05070c;
+  --panel: linear-gradient(140deg, rgba(132,0,255,.04), rgba(5,7,12,.98));
+  --modal:#0a0f19; --panel-file:#090e17; --chip-bg:#0b0f17;
+  --tx:#f4f7fb; --tx-soft:#cdd6e5; --tx-muted:#b0bdd0;
+  --logo-grad: radial-gradient(90% 80% at 20% 20%, #7a3cff 0%, #00b0ff 45%, #051022 100%);
+  --glow:#0088ff75; --logo-brim:#ffffff78;
+  --bd-1:#ffffff19; --bd-2:#ffffff2e;
+  --eyebrow-bg:#00b0ff19; --eyebrow-bd:#00b0ff9e; --eyebrow-tx:#dff0ff;
+  --halo-1:#00b0ff1a; --halo-2:#7a3cff1a;
+  --accent:#60c8ff; --accent-grad:linear-gradient(90deg,#00b0ff,#7a3cff);
+  --price-bg:#0b0f17; --price-bd:#00b0ffb3;
+  --ic-bd:#00b0ff8c; --ic-bg:#00b0ff26; --ic-tx:#9fe6ff;
+  --btn-prim-bg:linear-gradient(135deg,#00b0ff,#63d7ff); --btn-prim-tx:#06121a;
+  --btn-prim-sh:0 16px 34px #00b0ff66; --btn-prim-sh-h:0 20px 40px #00b0ff88;
+  --btn-sec-bg:linear-gradient(135deg,#102044,#5c6cff); --btn-sec-tx:#e7f7ff; --btn-sec-sh:0 14px 30px rgba(92,108,255,.35);
+  --focus-bd:#5c6cff; --focus-ring:#5c6cff80; --input-bg:#0a0f18; --input-focus:#0b1220; --tx-placeholder:#cddaea;
+  --ok:#0ad27b; --ok-bg:#0ad27b19; --ok-bd:#0ad27b94; --ok-tx:#c8ffe6;
+  --err-bg:#ff4d7a19; --err-bd:#ff4d7ab3; --err-tx:#ffd3df;
+  --overlay:#0006108f;
+  --seal-bg:#00b0ff19; --seal-bd:#00b0ff9e; --seal-tx:#dff5ff;
+  --code-bd:#00b0ffcc; --code-bg:#00b0ff26; --code-tx:#e8f8ff; --accent-soft:#00b0ff33;
+  --file-grad:linear-gradient(135deg,#0e2044 0,#101728 100%); --file-ic-tx:#e8f8ff;
+}
+/* ======== PATCH v7.3.1 – MOBILE FIX & MODAL ADAPTIVE ======== */
+
+/* 🔸 Corrige espaçamento e evita scroll lateral */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  .page {
+    padding: 24px 18px 72px !important;
+  }
+
+  header, .hero, footer, .delivery, .copy {
+    width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 14px;
+  }
+
+  .hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .video-inline {
+    width: 100% !important;
+    border-radius: 14px !important;
+  }
+
+  .cta {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .btn-primary, .btn-ghost {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .price b {
+    font-size: 1.3rem !important;
+  }
+
+  .file-card {
+    transform: none !important;
+  }
+}
+
+/* 🔸 Popup totalmente adaptável e scrollável */
+@media (max-width: 720px) {
+  .modal {
+    align-items: flex-start !important;
+    padding: 12px !important;
+    overflow-y: auto !important;
+  }
+
+  .m-panel {
+    width: 100% !important;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    border-radius: 14px !important;
+    transform: none !important;
+  }
+
+  .m-head {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--modal);
+    border-bottom: 1px solid var(--bd-1);
+  }
+
+  .m-body {
+    padding: 14px !important;
+  }
+
+  .m-close {
+    padding: 8px 12px !important;
+    font-size: .9rem !important;
+  }
+
+  .btn-send, .btn-cancel {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  .note {
+    margin-bottom: 14px;
+  }
+}
+
+/* 🔸 Ajuste extra de segurança em dispositivos ultrapequenos */
+@media (max-height: 500px) {
+  .m-panel {
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+    max-height: calc(100vh - 24px) !important;
+    overflow-y: auto !important;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="reveal">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="b-title">Nova Marca Pro</div>
+          <div class="b-sub">Marca profissional por um valor que cabe no bolso</div>
+        </div>
+      </div>
+      <div class="pill"><span class="pill-dot"></span> Vagas limitadas • Atendimento individual</div>
+    </header>
+
+    <!-- HERO 2 colunas -->
+    <section class="hero reveal" aria-labelledby="heroTitle">
+      <div class="hero-grid">
+        <!-- Coluna esquerda: copy -->
+        <div>
+          <div class="eyebrow">criação de marca profissional</div>
+          <h1 id="heroTitle">Enquanto o mercado entrega um logotipo,<br><span class="h1-h">eu entrego a estrutura completa de marca</span>.</h1>
+          <p class="sub">Arquivos raros, organizados e prontos para tudo: gráfica, redes sociais, site e embalagem — PNG, JPG, PNG sem fundo, PDF vetorizado, SVG web e CorelDRAW editável.</p>
+          <div class="seal">⚡ <b>Entrega garantida em até 48h</b> • ⏳ Prazo máximo de 7 dias (<b>se ultrapassar</b>: reembolso parcial de 50% <u>e</u> a entrega)</div>
+          <div class="price">Investimento único: <b>R$ 120</b> <span style="color:var(--tx-muted);font-size:.92rem">• você recebe o ouro em design</span></div>
+          <div class="cta">
+            <button class="btn-primary" id="btnOpenModal">Quero minha marca em 48h</button>
+            <button class="btn-ghost" id="btnScrollVideo">Ver apresentação em vídeo</button>
+          </div>
+        </div>
+
+        <!-- Coluna direita: vídeo -->
+        <div class="video-inline" id="videoTop">
+          <iframe src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID"
+                  title="Apresentação Nova Marca Pro" frameborder="0" allowfullscreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+        </div>
+      </div>
+
+      <div class="copy" style="margin-top:22px">
+        <h3>“Você nunca viu um serviço de marca como este.”</h3>
+        <p>Não vendo “um logo rápido”. Entrego um <b>sistema de identidade</b> em <b>todos os formatos profissionais</b> que uma empresa séria precisa — <b>organizados, nomeados e padronizados</b>. Quase ninguém trabalha assim.</p>
+        <p><b>Assinado por:</b> Manoel Thó — Designer da Nova Marca Pro.</p>
+        <div class="list" role="list">
+          <div class="li" role="listitem"><div class="ic">✓</div><div><b>Marca pensada para o seu nicho</b><br>Entendo primeiro o seu negócio — nada de logo genérica.</div></div>
+          <div class="li" role="listitem"><div class="ic">★</div><div><b>Percepção de valor alta</b><br>Seu cliente sente confiança antes mesmo de falar com você.</div></div>
+          <div class="li" role="listitem"><div class="ic">∞</div><div><b>Pronta para tudo</b><br>Instagram, cartão, fachada, embalagem, site e mais.</div></div>
+          <div class="li" role="listitem"><div class="ic">⚙</div><div><b>Arquivos profissionais raros de se ver juntos</b><br>PNG, JPG, PNG sem fundo, CorelDRAW, PDF e SVG — <b>organizados e nomeados</b>.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pasta de entrega -->
+    <section class="delivery reveal" aria-label="Exemplo de organização de arquivos finais">
+      <div class="file-card"><div class="file-ic">PNG</div><div class="file-meta"><div class="file-name">Marca_Final_Principal.png</div><div class="file-desc">Alta resolução para redes e apresentações.</div></div></div>
+      <div class="file-card"><div class="file-ic">PNG</div><div class="file-meta"><div class="file-name">Marca_Final_SemFundo.png</div><div class="file-desc">Fundo transparente — ideal para qualquer layout.</div></div></div>
+      <div class="file-card"><div class="file-ic">JPG</div><div class="file-meta"><div class="file-name">Marca_Final_JPG_HQ.jpg</div><div class="file-desc">Compatível com tudo, tamanho otimizado.</div></div></div>
+      <div class="file-card"><div class="file-ic">PDF</div><div class="file-meta"><div class="file-name">Marca_Vetorizada.pdf</div><div class="file-desc">Vetor para gráfica, nitidez máxima.</div></div></div>
+      <div class="file-card"><div class="file-ic">SVG</div><div class="file-meta"><div class="file-name">Marca_Vetorial_Web.svg</div><div class="file-desc">Leve para sites, nitidez infinita.</div></div></div>
+      <div class="file-card"><div class="file-ic">CDR</div><div class="file-meta"><div class="file-name">Marca_Editavel_CorelDRAW.cdr</div><div class="file-desc">Arquivo-fonte para ajustes avançados.</div></div></div>
+    </section>
+
+    <footer class="reveal">
+      <div>© <b>Nova Marca Pro</b> — uma marca forte começa com uma decisão simples.</div>
+      <div class="refund">💬 <b>Política de Reembolso:</b> serviço criativo e personalizado não possui reembolso total. Em casos específicos, pode haver <b>reembolso parcial de 50%</b>. Prazo máximo de 7 dias para entrega (se ultrapassar, reembolso parcial + entrega). Após envio dos arquivos finais, não há reembolso.</div>
+      <div><a href="#heroTitle" class="footer-link">Início</a></div>
+    </footer>
+  </div>
+
+  <!-- POPUP -->
+  <div class="modal" id="modal" aria-hidden="true" aria-labelledby="modalTitle">
+    <div class="m-panel" role="dialog" aria-modal="true">
+      <div class="m-head">
+        <div class="m-title" id="modalTitle">Receber proposta • Atendimento com Manoel Thó</div>
+        <button class="m-close" id="btnCloseModal" type="button" aria-label="Fechar pop-up">Fechar</button>
+      </div>
+      <div class="m-body">
+        <div class="m-grid">
+          <div class="form-group">
+            <input id="m_nome" class="input" placeholder=" " autocomplete="name">
+            <label class="label-float" for="m_nome">Seu nome</label>
+          </div>
+          <div class="form-group">
+            <input id="m_whats" class="input" placeholder=" " autocomplete="tel">
+            <label class="label-float" for="m_whats">Seu WhatsApp</label>
+          </div>
+          <div class="form-group">
+            <input id="m_email" type="email" class="input" placeholder=" " autocomplete="email">
+            <label class="label-float" for="m_email">E-mail (opcional)</label>
+          </div>
+          <div class="form-group">
+            <select id="m_segmento" class="input">
+              <option value="">Selecione</option>
+              <option>Serviços (autônomo / prestador)</option>
+              <option>Loja física / comércio</option>
+              <option>Negócio online / infoproduto</option>
+              <option>Restaurante / alimentação</option>
+              <option>Saúde / beleza / estética</option>
+              <option>Imobiliária / corretor</option>
+              <option>Outro tipo de negócio</option>
+            </select>
+            <label class="label-float" for="m_segmento">Ramo do negócio</label>
+          </div>
+          <div class="form-group" style="grid-column:1 / -1">
+            <textarea id="m_desc" class="textarea" placeholder=" "></textarea>
+            <label class="label-float" for="m_desc">Descreva o que imagina para sua marca (opcional)</label>
+          </div>
+        </div>
+
+        <div id="m_codeWarn" class="code-warn" role="note" aria-live="polite">
+          ⚠️ <b>Código único gerado:</b> <span id="m_codeText"></span><br>
+          Este código é <b>obrigatório</b> e <b>não pode ser apagado ou alterado</b> na conversa do WhatsApp. Ele identifica seu pedido.
+        </div>
+
+        <div class="check">
+          <input id="m_aceite" type="checkbox">
+          <label for="m_aceite" style="margin:0">Confirmo o valor de <b>R$120</b> e que existe <b>reembolso parcial de 50%</b> (se ultrapassar 7 dias, recebo reembolso parcial + entrega).</label>
+        </div>
+
+        <div class="m-actions">
+          <button class="btn-send" id="btnMiniSend" type="button">Enviar e abrir WhatsApp</button>
+          <button class="btn-cancel" id="btnMiniCancel" type="button">Cancelar</button>
+        </div>
+        <div id="m_status" class="status" role="status" aria-live="polite"></div>
+        <p class="note">Ao enviar, abriremos seu WhatsApp com a mensagem pronta, incluindo o código de identificação (<b>não pode ser apagado</b>).</p>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* =================== CONFIG (edite aqui) =================== */
+const WHATSAPP_NUMBER = "5583986042445"; // DDI+DDD+número, apenas dígitos
+const YOUTUBE_VIDEO_ID = "ZHMxuoUaWxM"; // apenas o ID
+const RANDOM_THEME = true;   // true = escolhe A–F aleatoriamente a cada visita
+const FIXED_THEME = "F";     // usado se RANDOM_THEME = false
+
+/* ================ Helpers ================ */
+const $ = (sel,root=document)=>root.querySelector(sel);
+const $$ = (sel,root=document)=>Array.from(root.querySelectorAll(sel));
+const isMobile = ()=>/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+function enc(s){return encodeURIComponent(s||"");}
+function genCode(){
+  const prefix="#logoMAKER-";
+  const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let r=""; for(let i=0;i<4;i++) r+=chars[Math.floor(Math.random()*chars.length)];
+  return prefix+r;
+}
+function buildMessage({nome,whats,email,segmento,descricao,codigo}){
+  let msg="Olá! 👋%0A";
+  msg+="Acabei de solicitar minha proposta da *Nova Marca Pro* (criação de marca por *R$ 120*).%0A%0A";
+  msg+="🧾 *Código único de identificação (não apagar ou alterar):*%0A"+enc(codigo)+"%0A%0A";
+  msg+="👤 *Nome:* "+enc(nome)+"%0A";
+  msg+="📱 *WhatsApp:* "+enc(whats)+"%0A";
+  if(email) msg+="📧 *E-mail:* "+enc(email)+"%0A";
+  msg+="💼 *Segmento:* "+enc(segmento || "Não informado")+"%0A";
+  msg+="💬 *Descrição:* "+enc(descricao || "Não informado")+"%0A%0A";
+  msg+="Estou ciente do prazo de *até 48h* (máximo 7 dias) e da política de *reembolso parcial (50%)* se ultrapassar o máximo.";
+  return msg;
+}
+function openWhatsApp(payload){
+  const tel=(WHATSAPP_NUMBER||"").replace(/\D/g,"");
+  if(!tel || tel.length<10){alert("Número de WhatsApp do destino não configurado no código.");return;}
+  const base = isMobile() ? "https://api.whatsapp.com/send" : "https://web.whatsapp.com/send";
+  const url = `${base}?phone=${tel}&text=${payload}`;
+  window.open(url,"_blank","noopener");
+}
+
+/* ================ Tema (aleatório/fixo) + transição suave ================ */
+(function(){
+  const THEMES=["A","B","C","D","E","F"];
+  const chosen = RANDOM_THEME ? THEMES[Math.floor(Math.random()*THEMES.length)] : FIXED_THEME;
+  document.body.classList.add(`theme-${chosen}`);
+  // Fade-in após aplicação do tema
+  requestAnimationFrame(()=>document.body.classList.add("ready"));
+})();
+
+/* ================ Vídeo do hero ================ */
+(function(){
+  const iframe = $("#videoTop iframe");
+  if(iframe && YOUTUBE_VIDEO_ID && YOUTUBE_VIDEO_ID.length>=8){
+    iframe.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}`;
+  }
+})();
+
+/* ================ Modal ================ */
+const modal=$("#modal");
+const btnOpen=$("#btnOpenModal");
+const btnClose=$("#btnCloseModal");
+const btnCancel=$("#btnMiniCancel");
+const btnSend=$("#btnMiniSend");
+const statusBox=$("#m_status");
+const codeWarn=$("#m_codeWarn");
+const codeText=$("#m_codeText");
+
+function lockScroll(){document.documentElement.style.overflow="hidden";}
+function unlockScroll(){document.documentElement.style.overflow="";}
+
+function showModal(){
+  modal.classList.add("show"); modal.setAttribute("aria-hidden","false");
+  statusBox.className="status"; statusBox.textContent="";
+  codeWarn.style.display="none";
+  lockScroll();
+  setTimeout(()=>$("#m_nome").focus(),60);
+}
+function hideModal(){
+  modal.classList.remove("show"); modal.setAttribute("aria-hidden","true");
+  unlockScroll();
+}
+document.addEventListener("click",(e)=>{
+  const id=e.target.id;
+  if(id==="btnOpenModal") showModal();
+  if(id==="btnCloseModal"||id==="btnMiniCancel") hideModal();
+  if(e.target===modal) hideModal();
+});
+document.addEventListener("keydown",(e)=>{
+  if(e.key==="Escape" && modal.classList.contains("show")) hideModal();
+});
+modal.addEventListener("keydown",(e)=>{
+  if(e.key==="Enter"){
+    const tag=(e.target||{}).tagName||"";
+    if(tag!=="TEXTAREA"){e.preventDefault(); btnSend.click();}
+  }
+});
+
+/* Validação leve em tempo real */
+["m_nome","m_whats","m_email"].forEach(id=>{
+  const el=$("#"+id);
+  if(!el) return;
+  el.addEventListener("input",()=>{
+    if(id!=="m_email"){
+      el.style.borderColor = el.value.trim() ? "var(--ok)" : "var(--bd-2)";
+    }else{
+      el.style.borderColor = (/^\S+@\S+\.\S+$/.test(el.value)||el.value==="") ? "var(--bd-2)" : "var(--err-bd)";
+    }
+  });
+});
+
+/* Envio */
+btnSend.addEventListener("click",()=>{
+  const nome=($("#m_nome").value||"").trim();
+  const whats=($("#m_whats").value||"").trim();
+  const email=($("#m_email").value||"").trim();
+  const segmento=$("#m_segmento").value;
+  const desc=($("#m_desc").value||"").trim();
+  const aceite=$("#m_aceite").checked;
+
+  if(!nome || !whats){
+    statusBox.className="status err";
+    statusBox.textContent="Informe ao menos seu nome e WhatsApp.";
+    return;
+  }
+  if(!aceite){
+    statusBox.className="status err";
+    statusBox.textContent="Você precisa aceitar os termos (valor e reembolso parcial) para continuar.";
+    return;
+  }
+
+  const codigo=genCode();
+  codeText.textContent=codigo;
+  codeWarn.style.display="block";
+
+  const payload=buildMessage({nome,whats,email,segmento,descricao:desc,codigo});
+  statusBox.className="status ok";
+  statusBox.textContent="Gerando mensagem e abrindo seu WhatsApp. Não apague o código.";
+  openWhatsApp(payload);
+  setTimeout(()=>hideModal(),700);
+});
+
+/* ===== Scroll até o vídeo ===== */
+$("#btnScrollVideo")?.addEventListener("click",()=>{
+  $("#videoTop").scrollIntoView({behavior:"smooth",block:"center"});
+});
+
+/* ===== Reveals (IntersectionObserver) ===== */
+(function(){
+  const obs=new IntersectionObserver((ents)=>{
+    ents.forEach(ent=>{
+      if(ent.isIntersecting){ ent.target.classList.add("show"); obs.unobserve(ent.target); }
+    });
+  },{threshold:.12});
+  $$(".reveal").forEach(el=>obs.observe(el));
+})();
+
+/* ===== Micro-parallax seguro nos cards ===== */
+$$(".file-card").forEach(card=>{
+  card.addEventListener("mousemove",(e)=>{
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX - r.left)/r.width - .5;
+    const y=(e.clientY - r.top)/r.height - .5;
+    card.style.transform=`translateY(${ -4 + y*-2 }px) rotateX(${y*1.2}deg) rotateY(${x*-1.2}deg)`;
+  });
+  card.addEventListener("mouseleave",()=> card.style.transform="translateY(-4px)");
+});
+</script>
+</body>
+</html>
