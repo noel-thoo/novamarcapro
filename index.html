@@ -415,13 +415,265 @@ body.theme-F{
 }
 
 /* 🔸 Ajuste extra de segurança em dispositivos ultrapequenos */
-@media (max-height: 500px) {
+@media (max-height: 540px) {
   .m-panel {
     margin-top: 12px !important;
     margin-bottom: 12px !important;
     max-height: calc(100vh - 24px) !important;
     overflow-y: auto !important;
   }
+}
+
+/* ===== PATCH v7.3.3 – ULTRA RESPONSIVE FIX ===== */
+
+/* 🔸 Normaliza texto e impede zoom automático */
+html, body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* 🔸 Garante que todos os elementos respeitem os limites da viewport */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 🔸 Reforça containers principais */
+.page, .hero, .delivery, .copy, footer, header {
+  width: min(100%, 100vw - 16px) !important;
+  margin-inline: auto !important;
+}
+
+/* 🔸 Hero totalmente fluido */
+@media (max-width: 860px) {
+  .hero {
+    padding: 24px 16px !important;
+    border-radius: 12px !important;
+  }
+  .hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+  .video-inline {
+    width: 100% !important;
+    aspect-ratio: 16/9 !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+  }
+  h1 {
+    font-size: clamp(1.6rem, 5vw, 2.4rem) !important;
+    line-height: 1.15 !important;
+  }
+  .sub {
+    font-size: 1rem !important;
+  }
+  .cta {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .btn-primary, .btn-ghost {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* 🔸 Corrige modal/popup em todas as telas pequenas */
+.modal {
+  align-items: flex-start !important;
+  overflow-y: auto !important;
+  padding: 10px !important;
+}
+.m-panel {
+  width: min(100%, 600px) !important;
+  margin: 40px auto !important;
+  border-radius: 14px !important;
+  overflow-y: auto !important;
+  max-height: calc(100vh - 60px) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.m-head {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--modal);
+  border-bottom: 1px solid var(--bd-1);
+  padding: 10px 16px !important;
+}
+.m-body {
+  padding: 14px 16px !important;
+  flex: 1 1 auto;
+}
+.m-foot {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.btn-send, .btn-cancel {
+  width: 100% !important;
+  justify-content: center;
+}
+.m-close {
+  padding: 8px 14px !important;
+  font-size: .9rem !important;
+}
+
+/* 🔸 Ajustes de emergência para telas menores que 500px */
+@media (max-width: 500px) {
+  .hero, .page, .delivery {
+    padding: 16px !important;
+  }
+  h1 {
+    font-size: 1.4rem !important;
+  }
+  .m-panel {
+    margin: 20px auto !important;
+    max-height: calc(100vh - 30px) !important;
+  }
+}
+/* ===== v7.3.4 – Ultra Tight Devices Fix (coloque no final do <style>) ===== */
+
+/* 1) Normalização global para telas muito estreitas e altas densidades */
+@media (max-width: 420px) {
+  :root {
+    /* paddings fluidos para estreitos */
+    --pad-inline: clamp(10px, 4vw, 18px);
+  }
+
+  html, body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* containers centrais nunca extrapolam */
+  .page, header, .hero, .copy, .delivery, footer {
+    width: min(100%, 100vw) !important;
+    margin-inline: auto !important;
+    padding-inline: var(--pad-inline) !important;
+    border-radius: 12px;
+  }
+
+  /* hero em coluna e com “halo” contido (o vilão do vazamento) */
+  .hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .hero::before {
+    /* encurta o halo para não deslocar visualmente a caixa */
+    inset: -10% !important;
+  }
+
+  /* tipografia e chips cabendo sem empurrar layout */
+  .eyebrow { letter-spacing: .10em !important; padding: 5px 10px !important; }
+  h1 { font-size: clamp(1.45rem, 5.2vw, 2.1rem) !important; line-height: 1.18 !important; }
+  .sub { font-size: .98rem !important; }
+
+  /* CTAs 100% largura e sem “escapar” */
+  .cta { flex-direction: column !important; align-items: stretch !important; }
+  .btn-primary, .btn-ghost { width: 100% !important; justify-content: center !important; }
+
+  /* blocos com borda/padding que antes “passavam da linha” */
+  .seal, .price { margin-inline: 0 !important; }
+  .price { align-items: center !important; flex-wrap: wrap !important; }
+
+  /* cards não aplicam micro-tilt em telas estreitas para evitar deslocamento */
+  .file-card { transform: none !important; }
+}
+
+/* 2) Ajustes extras para super estreitos (Fold fechado, iPhone SE etc.) */
+@media (max-width: 360px) {
+  :root { --pad-inline: clamp(8px, 4.5vw, 14px); }
+  .hero, .copy, .delivery, footer { padding-inline: 12px !important; }
+  h1 { font-size: clamp(1.35rem, 5.4vw, 1.9rem) !important; }
+}
+
+/* 3) Modal realmente “inquebrável”: altura dinâmica + scroll interno */
+@media (max-width: 720px) {
+  .modal {
+    align-items: flex-start !important;
+    padding: 12px !important;
+    overflow-y: auto !important;
+  }
+  .m-panel {
+    width: min(100%, 600px) !important;
+    max-height: calc(100dvh - 24px) !important; /* usa dvh p/ barras móveis */
+    overflow-y: auto !important;
+    margin: 12px auto !important;
+  }
+  .m-head {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--modal);
+  }
+  .m-body { padding: 14px !important; }
+  .m-grid { grid-template-columns: 1fr !important; gap: 12px !important; } /* 1 coluna no mobile */
+  .btn-send, .btn-cancel { width: 100% !important; justify-content: center; }
+}
+
+/* 4) Segurança para textos e iframes em qualquer device */
+h1, h2, h3, p, label, input, button, .pill, .price, .seal {
+  max-width: 100% !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+}
+.video-inline iframe { max-width: 100% !important; height: auto !important; aspect-ratio: 16/9; }
+
+/* ===== PATCH v7.3.5 — Ajuste de texto e responsividade fina ===== */
+
+/* 🔸 Corrige o selo de “Vagas limitadas” */
+.pill {
+  display: flex;
+  flex-wrap: wrap;               /* permite quebra de linha */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6px 10px !important;
+  gap: 6px !important;
+  max-width: 100%;
+  line-height: 1.2;
+  font-size: clamp(.8rem, 2.5vw, .9rem); /* reduz dinamicamente */
+  word-break: keep-all;
+}
+
+/* 🔸 Evita o salto do texto lateral em dispositivos muito estreitos */
+@media (max-width: 420px) {
+  .pill {
+    font-size: .8rem !important;
+    padding: 6px 8px !important;
+  }
+}
+
+/* 🔸 Ajuste automático do texto nos cards de formato de arquivo */
+.file-card b,
+.file-card span,
+.file-card p {
+  display: block;
+  text-align: center;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-size: clamp(.8rem, 2.3vw, .95rem); /* encolhe de acordo com a tela */
+  line-height: 1.2;
+  white-space: normal !important;
+}
+
+/* 🔸 Evita corte total de texto dentro do card */
+.file-card {
+  min-width: 120px;
+  padding: 12px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 </style>
@@ -717,6 +969,16 @@ $$(".file-card").forEach(card=>{
   });
   card.addEventListener("mouseleave",()=> card.style.transform="translateY(-4px)");
 });
+
+(function tightMode(){
+  const apply = () => {
+    const tight = window.innerWidth <= 380 || (window.innerWidth <= 420 && window.innerHeight <= 700);
+    document.body.classList.toggle('device-tight', tight);
+  };
+  apply();
+  window.addEventListener('resize', apply, { passive: true });
+})();
+
 </script>
 </body>
 </html>
